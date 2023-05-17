@@ -7,4 +7,5 @@ final getIt = GetIt.instance;
 @InjectableInit(
   preferRelativeImports: true,
 )
-void configureDependencies() => getIt.init();
+void configureDependencies(String environment) =>
+    getIt.init(environment: environment);
