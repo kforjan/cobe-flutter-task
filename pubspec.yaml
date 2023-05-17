@@ -1,0 +1,80 @@
+name: cobe_flutter_task
+description: A new Flutter project.
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  # Core
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  # Dependency Injection
+  injectable: ^2.1.1
+  get_it: ^7.2.0
+
+  # Networking
+  dio: ^5.1.1
+  retrofit: ^4.0.1
+  pretty_dio_logger: any
+
+  #Local Storage
+  hive: ^2.2.3
+  path_provider: ^2.0.15
+
+  # State management
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+
+  # Routing
+  go_router: ^7.0.0
+
+  # Immutable Data Structures
+  freezed: ^2.3.2
+
+  # Error handling
+  dartz: ^0.10.1
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+  # Annotation
+  json_annotation: ^4.8.0
+  freezed_annotation: ^2.2.0
+
+  # Test
+  mockito: ^5.4.0
+  bloc_test: ^9.1.1
+
+  # Widgets
+  flutter_svg: ^2.0.5
+
+dev_dependencies:
+  # Core
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  # Serialization
+  json_serializable: ^6.6.1
+
+  # Code Generation
+  injectable_generator: any
+  retrofit_generator: any
+  hive_generator: any
+  build_runner: 
+
+   # Logging
+  logger: any
+
+flutter:
+  uses-material-design: true  
+
+flutter_intl:
+  enabled: true
