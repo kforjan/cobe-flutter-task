@@ -1,3 +1,5 @@
+import 'package:cobe_flutter_task/di/injection.dart';
+import 'package:cobe_flutter_task/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -5,6 +7,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp.router(
+      routerConfig: getIt<AppRouter>().routerConfig,
+    );
   }
 }
