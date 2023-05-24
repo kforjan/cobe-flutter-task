@@ -37,3 +37,11 @@ linter:
     empty_constructor_bodies: true
     file_names: true
     sort_constructors_first: true
+
+analyzer:
+  exclude:
+    - '**.g.dart'
+    - '**.config.dart'
+    - '**.freezed.dart'
+    - 'l10n.dart'
+    - 'lib/generated'
