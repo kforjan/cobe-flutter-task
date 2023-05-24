@@ -83,7 +83,7 @@ class DetailsContainer extends StatelessWidget {
                       height: 22 / 15,
                       color: const Color(
                         0xFF33393c,
-                      ), // TODO check all colors for fonts
+                      ),
                     ),
                   ),
                   SizedBox(

@@ -97,68 +97,70 @@ class MovieListTile extends StatelessWidget {
           SizedBox(
             width: context.getProportionalWidth(12.0),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: context.getProportionalHeight(20.45),
-                width: context.getProportionalWidth(230.0),
-                child: FittedBox(
-                  alignment: Alignment.centerLeft,
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    movie.title,
-                    style: TextStyle(
-                      fontFamily: Fonts.filsonPro,
-                      fontWeight: FontWeight.w500,
-                      fontSize: context.getProportionalHeight(15),
-                      height: 20.45 / 15,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: context.getProportionalHeight(20.45),
+                  width: context.getProportionalWidth(230.0),
+                  child: FittedBox(
+                    alignment: Alignment.centerLeft,
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      movie.title,
+                      style: TextStyle(
+                        fontFamily: Fonts.filsonPro,
+                        fontWeight: FontWeight.w500,
+                        fontSize: context.getProportionalHeight(15),
+                        height: 20.45 / 15,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: context.getProportionalHeight(12.0),
-              ),
-              RatingText(text: '${movie.rating}/10 IMDb'),
-              SizedBox(
-                height: context.getProportionalHeight(12.0),
-              ),
-              SizedBox(
-                height: context.getProportionalHeight(23.0),
-                width: context.getProportionalWidth(230.0),
-                child: GenreListView(
-                  genres: movie.genres,
+                SizedBox(
+                  height: context.getProportionalHeight(12.0),
                 ),
-              ),
-              SizedBox(
-                height: context.getProportionalHeight(12.0),
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset(
-                    Images.durationClockIcon,
-                    height: context.getProportionalHeight(16.0),
-                    width: context.getProportionalWidth(16.0),
+                RatingText(text: '${movie.rating}/10 IMDb'),
+                SizedBox(
+                  height: context.getProportionalHeight(12.0),
+                ),
+                SizedBox(
+                  height: context.getProportionalHeight(23.0),
+                  width: context.getProportionalWidth(230.0),
+                  child: GenreListView(
+                    genres: movie.genres,
                   ),
-                  SizedBox(
-                    width: context.getProportionalWidth(4.0),
-                  ),
-                  Text(
-                    '${(movie.durationMinutes / 60).floor()}h ${(movie.durationMinutes % 60).toString().padLeft(2, '0')}m',
-                    style: TextStyle(
-                      fontFamily: Fonts.filsonPro,
-                      fontWeight: FontWeight.w400,
-                      fontSize: context.getProportionalHeight(12),
-                      height: 16.36 / 12,
-                      letterSpacing: 0.02,
+                ),
+                SizedBox(
+                  height: context.getProportionalHeight(12.0),
+                ),
+                Row(
+                  children: [
+                    SvgPicture.asset(
+                      Images.durationClockIcon,
+                      height: context.getProportionalHeight(16.0),
+                      width: context.getProportionalWidth(16.0),
                     ),
-                  )
-                ],
-              ),
-            ],
+                    SizedBox(
+                      width: context.getProportionalWidth(4.0),
+                    ),
+                    Text(
+                      '${(movie.durationMinutes / 60).floor()}h ${(movie.durationMinutes % 60).toString().padLeft(2, '0')}m',
+                      style: TextStyle(
+                        fontFamily: Fonts.filsonPro,
+                        fontWeight: FontWeight.w400,
+                        fontSize: context.getProportionalHeight(12),
+                        height: 16.36 / 12,
+                        letterSpacing: 0.02,
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

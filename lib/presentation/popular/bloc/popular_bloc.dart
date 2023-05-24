@@ -8,9 +8,9 @@ import 'package:cobe_flutter_task/util/rate_limit_bloc_transformer.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+part 'popular_bloc.freezed.dart';
 part 'popular_event.dart';
 part 'popular_state.dart';
-part 'popular_bloc.freezed.dart';
 
 @injectable
 class PopularBloc extends Bloc<PopularEvent, PopularState> {
@@ -90,10 +90,24 @@ class PopularBloc extends Bloc<PopularEvent, PopularState> {
     int page,
   ) {
     state.map(
-      initial: (_) => emit(PopularState.loaded(updatedMovies, page + 1)),
-      loaded: (loaded) => emit(
-        PopularState.loaded(loaded.movies + updatedMovies, page + 1),
-      ),
+      initial: (_) {
+        if (updatedMovies.isNotEmpty) {
+          emit(PopularState.loaded(updatedMovies, page + 1));
+        } else {
+          emit(PopularState.loaded(updatedMovies, page));
+        }
+      },
+      loaded: (loaded) {
+        if (updatedMovies.isNotEmpty) {
+          emit(
+            PopularState.loaded(loaded.movies + updatedMovies, page + 1),
+          );
+        } else {
+          emit(
+            PopularState.loaded(loaded.movies + updatedMovies, page),
+          );
+        }
+      },
       failure: (_) => {},
     );
   }

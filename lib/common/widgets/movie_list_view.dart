@@ -36,8 +36,9 @@ class MovieListView extends StatelessWidget {
   ScrollController _buildScrollController(BuildContext context) {
     final ScrollController controller = ScrollController();
     controller.addListener(() {
+      const double thresholdPercent = 0.8;
       final thresholdReached = controller.position.pixels >
-          controller.position.maxScrollExtent - 720;
+          controller.position.maxScrollExtent * thresholdPercent;
 
       if (thresholdReached) {
         onScrollTresholdReach();
