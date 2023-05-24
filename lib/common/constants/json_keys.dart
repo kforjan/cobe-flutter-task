@@ -1,3 +1,4 @@
 abstract class JsonKeys {
-  static const apiKey = 'api_key';
+  static const authorization = 'Authorization';
+  static const sourcePageName = 'source_page_id';
 }
