@@ -21,6 +21,7 @@ dependencies:
   dio: ^5.1.2
   retrofit: ^4.0.1
   pretty_dio_logger: any
+  connectivity_plus: ^4.0.1
 
   #Local Storage
   hive: ^2.2.3
@@ -28,7 +29,9 @@ dependencies:
 
   # State management
   bloc: ^8.1.1
-  flutter_bloc: ^8.1.2
+  flutter_bloc: ^8.1.3
+  bloc_concurrency: ^0.2.2
+  stream_transform: ^2.1.0
 
   # Routing
   go_router: ^7.0.1
@@ -50,10 +53,11 @@ dependencies:
 
   # Test
   mockito: ^5.4.0
-  bloc_test: ^9.1.1
+  bloc_test: ^9.1.2
 
   # Widgets
   flutter_svg: ^2.0.5
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   # Core
@@ -76,6 +80,86 @@ dev_dependencies:
 flutter:
   uses-material-design: true  
   generate: true
+  assets:
+    - assets/images/
+    - assets/fonts/filson_pro/
+    - assets/fonts/playfair_display/
+  fonts:
+    - family: FilsonPro
+      fonts:
+        - asset: assets/fonts/filson_pro/FilsonProThin.otf
+          weight: 100
+        - asset: assets/fonts/filson_pro/FilsonProThinItalic.otf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProLight.otf
+          weight: 200
+        - asset: assets/fonts/filson_pro/FilsonProLightItalic.otf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProBook.otf
+          weight: 300
+        - asset: assets/fonts/filson_pro/FilsonProBookItalic.otf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProRegular.otf
+          weight: 400
+        - asset: assets/fonts/filson_pro/FilsonProRegularItalic.otf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProMedium.otf
+          weight: 500
+        - asset: assets/fonts/filson_pro/FilsonProMediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProBold.otf
+          weight: 700
+        - asset: assets/fonts/filson_pro/FilsonProBoldItalic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProHeavy.otf
+          weight: 800
+        - asset: assets/fonts/filson_pro/FilsonProHeavyItalic.otf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/filson_pro/FilsonProBlack.otf
+          weight: 900
+        - asset: assets/fonts/filson_pro/FilsonProBlackItalic.otf
+          weight: 900
+          style: italic
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-BlackItalic.ttf
+          weight: 900
+        - asset: assets/fonts/playfair_display/PlayfairDisplay-Black.ttf
+          weight: 900
+          style: italic
+
 
 flutter_intl:
   enabled: true
