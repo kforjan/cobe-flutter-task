@@ -8,6 +8,6 @@ abstract class NavigationModule {
   @singleton
   GoRouter get goRouter => GoRouter(
         routes: Routes.routes,
-        initialLocation: RoutePaths.splash,
+        initialLocation: RoutePaths.home,
       );
 }
