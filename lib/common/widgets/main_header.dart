@@ -33,7 +33,7 @@ class MainHeader extends StatelessWidget {
                   fontFamily: Fonts.filsonPro,
                   fontWeight: FontWeight.w700,
                   fontSize: context.getProportionalHeight(20),
-                ), //TODO extract textstyle
+                ),
               ),
               const Spacer(),
               state.map(

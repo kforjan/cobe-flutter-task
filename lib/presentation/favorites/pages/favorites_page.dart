@@ -33,7 +33,7 @@ class FavoritesPage extends StatelessWidget {
               height: 32 / 24,
               letterSpacing: -0.2,
               color: const Color(0xFF33393c),
-            ), //TODO extract text style
+            ),
           ),
           SizedBox(
             height: context.getProportionalHeight(20.0),

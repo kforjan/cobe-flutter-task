@@ -1,4 +1,4 @@
-import 'package:cobe_flutter_task/data/common/dto/request/common_query_params_dto.dart';
+import 'package:cobe_flutter_task/data/common/dto/queries/common_query_params_dto.dart';
 import 'package:cobe_flutter_task/data/movies/dto/response/genres_response_dto.dart';
 import 'package:cobe_flutter_task/data/movies/dto/response/movie_details_response_dto.dart';
 import 'package:cobe_flutter_task/data/movies/dto/response/popular_movies_response_dto.dart';

@@ -21,7 +21,7 @@ class DetailsContainer extends StatelessWidget {
         horizontal: context.getProportionalWidth(24.0),
       ),
       decoration: const BoxDecoration(
-        color: Colors.white, //TODO replace color
+        color: Colors.white,
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(16.0),
         ),

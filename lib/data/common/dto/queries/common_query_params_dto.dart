@@ -12,4 +12,4 @@ class CommonQueryParamsDto with _$CommonQueryParamsDto {
 
   factory CommonQueryParamsDto.fromJson(Map<String, dynamic> json) =>
       _$CommonQueryParamsDtoFromJson(json);
-}//todo rename directory to queries
+}
