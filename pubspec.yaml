@@ -1,5 +1,5 @@
 name: cobe_flutter_task
-description: A new Flutter project.
+description: Application for finding popular movies.
 publish_to: 'none' 
 
 version: 1.0.0+1
@@ -58,6 +58,7 @@ dependencies:
   # Widgets
   flutter_svg: ^2.0.5
   cached_network_image: ^3.2.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
   # Core
@@ -74,8 +75,13 @@ dev_dependencies:
   hive_generator: any
   build_runner: 
 
-   # Logging
+  # Logging
   logger: any
+
+  # Native UI
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.0
+
 
 flutter:
   uses-material-design: true  
@@ -160,6 +166,17 @@ flutter:
           weight: 900
           style: italic
 
-
 flutter_intl:
   enabled: true
+
+flutter_launcher_icons:
+  image_path: "assets/images/cobe_launcher_icon.png"
+  adaptive_icon_foreground: "assets/images/cobe_launcher_icon.png"
+  adaptive_icon_background: "#ffffff"
+  android: true 
+  ios: true 
+  min_sdk_android: 19
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: "assets/images/cobe_launcher_icon.png"

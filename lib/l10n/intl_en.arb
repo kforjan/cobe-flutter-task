@@ -5,5 +5,6 @@
     "favorites_title": "Favorites",
     "details_description_title": "Description",
     "internet_connection_warning_desctription": "The Internet connection appears to be offline.",
+    "no_favorites_notification": "There are no favorites currently.\nAdd movies to create your personalized list.",
     "ok": "OK"
 }

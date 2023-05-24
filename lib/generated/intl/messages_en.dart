@@ -28,7 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "favorites_title": MessageLookupByLibrary.simpleMessage("Favorites"),
         "internet_connection_warning_desctription":
             MessageLookupByLibrary.simpleMessage(
-                "The Internet connection appears to be offline.",),
+                "The Internet connection appears to be offline."),
+        "no_favorites_notification": MessageLookupByLibrary.simpleMessage(
+            "There are no favorites currently.\nAdd movies to create your personalized list."),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "popular_title": MessageLookupByLibrary.simpleMessage("Popular")
       };

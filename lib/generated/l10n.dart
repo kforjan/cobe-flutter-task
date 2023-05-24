@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:cobe_flutter_task/generated/intl/messages_all.dart';
+import 'intl/messages_all.dart';
 
 // **************************************************************************
 // Generator: Flutter Intl IDE plugin
@@ -19,7 +19,7 @@ class S {
 
   static S get current {
     assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',);
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -42,7 +42,7 @@ class S {
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
     assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',);
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -95,6 +95,16 @@ class S {
     return Intl.message(
       'The Internet connection appears to be offline.',
       name: 'internet_connection_warning_desctription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no favorites currently.\nAdd movies to create your personalized list.`
+  String get no_favorites_notification {
+    return Intl.message(
+      'There are no favorites currently.\nAdd movies to create your personalized list.',
+      name: 'no_favorites_notification',
       desc: '',
       args: [],
     );
