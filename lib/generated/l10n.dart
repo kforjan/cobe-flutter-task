@@ -59,6 +59,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Popular`
+  String get popular_title {
+    return Intl.message(
+      'Popular',
+      name: 'popular_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get favorites_title {
+    return Intl.message(
+      'Favorites',
+      name: 'favorites_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get details_description_title {
+    return Intl.message(
+      'Description',
+      name: 'details_description_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Internet connection appears to be offline.`
+  String get internet_connection_warning_desctription {
+    return Intl.message(
+      'The Internet connection appears to be offline.',
+      name: 'internet_connection_warning_desctription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

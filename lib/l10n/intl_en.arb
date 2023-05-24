@@ -1,4 +1,9 @@
 {
     "@@locale": "en",
-    "app_title": "Hive"
+    "app_title": "Hive",
+    "popular_title": "Popular",
+    "favorites_title": "Favorites",
+    "details_description_title": "Description",
+    "internet_connection_warning_desctription": "The Internet connection appears to be offline.",
+    "ok": "OK"
 }
