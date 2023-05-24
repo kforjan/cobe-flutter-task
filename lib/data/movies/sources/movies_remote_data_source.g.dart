@@ -43,10 +43,10 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
 
   @override
   Future<PopularMoviesResponseDto> getPopularMovies(
-      CommonQueryParamsDto pageAndLangugage) async {
+      {required CommonQueryParamsDto queries}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(pageAndLangugage.toJson());
+    queryParameters.addAll(queries.toJson());
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -67,13 +67,13 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
   }
 
   @override
-  Future<MovieDetailsResponseDto> getMovieDetails(
-    CommonQueryParamsDto pageAndLangugage,
-    MovieDetailsRequestDto movieDetailsRequest,
-  ) async {
+  Future<MovieDetailsResponseDto> getMovieDetails({
+    required CommonQueryParamsDto queries,
+    required int id,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(pageAndLangugage.toJson());
+    queryParameters.addAll(queries.toJson());
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -84,7 +84,7 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
     )
             .compose(
               _dio.options,
-              '/movie/{id}',
+              '/movie/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

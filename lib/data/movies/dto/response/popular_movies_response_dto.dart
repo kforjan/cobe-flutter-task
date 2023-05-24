@@ -22,20 +22,11 @@ class PopularMoviesResponseDto with _$PopularMoviesResponseDto {
 class MovieDto with _$MovieDto {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory MovieDto({
-    required bool adult,
-    required String backdropPath,
     required List<int> genreIds,
     required int id,
-    required String originalLanguage,
-    required String originalTitle,
-    required String overview,
-    required double popularity,
-    required String posterPath,
-    required String releaseDate,
+    required String? posterPath,
     required String title,
-    required bool video,
     required double voteAverage,
-    required int voteCount,
   }) = _MovieDto;
 
   factory MovieDto.fromJson(Map<String, dynamic> json) =>
