@@ -1,12 +1,15 @@
 import 'package:cobe_flutter_task/common/constants/route_names.dart';
 import 'package:cobe_flutter_task/common/resources/fonts.dart';
+import 'package:cobe_flutter_task/common/resources/images.dart';
 import 'package:cobe_flutter_task/common/widgets/main_header.dart';
 import 'package:cobe_flutter_task/common/widgets/movie_list_view.dart';
+import 'package:cobe_flutter_task/common/widgets/shimmer_widget.dart';
 import 'package:cobe_flutter_task/generated/l10n.dart';
 import 'package:cobe_flutter_task/presentation/favorites/bloc/favorites_bloc.dart';
 import 'package:cobe_flutter_task/util/proportional_size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -41,12 +44,43 @@ class FavoritesPage extends StatelessWidget {
           BlocConsumer<FavoritesBloc, FavoritesState>(
             listener: (context, state) {},
             builder: (context, state) => state.when(
-              initial: () => Container(),
-              loaded: (movies) => MovieListView(
-                sourcePageName: RouteNames.favorites,
-                movies: movies,
-                onScrollTresholdReach: () {},
-              ),
+              initial: () => const ShimmerWidget(),
+              loaded: (movies) {
+                if (movies.isEmpty) {
+                  return Expanded(
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SvgPicture.asset(
+                            Images.favoritesTabOffIcon,
+                            height: context.getProportionalHeight(
+                              40,
+                            ),
+                          ),
+                          SizedBox(
+                            height: context.getProportionalHeight(16),
+                          ),
+                          Text(
+                            S.of(context).no_favorites_notification,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontFamily: Fonts.filsonPro,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                } else {
+                  return MovieListView(
+                    sourcePageName: RouteNames.favorites,
+                    movies: movies,
+                    onScrollTresholdReach: () {},
+                  );
+                }
+              },
               failure: (failure) => Container(),
             ),
           ),

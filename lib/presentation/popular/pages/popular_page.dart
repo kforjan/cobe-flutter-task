@@ -2,6 +2,7 @@ import 'package:cobe_flutter_task/common/constants/route_names.dart';
 import 'package:cobe_flutter_task/common/resources/fonts.dart';
 import 'package:cobe_flutter_task/common/widgets/main_header.dart';
 import 'package:cobe_flutter_task/common/widgets/movie_list_view.dart';
+import 'package:cobe_flutter_task/common/widgets/shimmer_widget.dart';
 import 'package:cobe_flutter_task/generated/l10n.dart';
 import 'package:cobe_flutter_task/presentation/popular/bloc/popular_bloc.dart';
 import 'package:cobe_flutter_task/util/proportional_size_extension.dart';
@@ -33,7 +34,7 @@ class PopularPage extends StatelessWidget {
               height: 32 / 24,
               letterSpacing: -0.2,
               color: const Color(0xFF33393c),
-            ), //TODO extract text style
+            ),
           ),
           SizedBox(
             height: context.getProportionalHeight(20.0),
@@ -41,15 +42,19 @@ class PopularPage extends StatelessWidget {
           BlocConsumer<PopularBloc, PopularState>(
             listener: (context, state) {},
             builder: (context, state) => state.when(
-              initial: () => Container(),
+              initial: () => const ShimmerWidget(),
               loaded: (movies, currentPage) {
-                return MovieListView(
-                  sourcePageName: RouteNames.popular,
-                  onScrollTresholdReach: () =>
-                      BlocProvider.of<PopularBloc>(context)
-                          .add(const PopularEvent.getPopularMovies()),
-                  movies: movies,
-                );
+                if (movies.isEmpty) {
+                  return const ShimmerWidget();
+                } else {
+                  return MovieListView(
+                    sourcePageName: RouteNames.popular,
+                    onScrollTresholdReach: () =>
+                        BlocProvider.of<PopularBloc>(context)
+                            .add(const PopularEvent.getPopularMovies()),
+                    movies: movies,
+                  );
+                }
               },
               failure: (failure) => Container(),
             ),
