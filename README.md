@@ -1,16 +1,22 @@
-# cobe_task_flutter
+# Hive - Explore poular movies
 
-A new Flutter project.
+A Flutter application for finding popular movies and creating personalized a list of your favorite movies. 
+## Setup
 
-## Getting Started
+  1. Clone the repository using the link below:
+  ```
+  https://github.com/kforjan/cobe-flutter-task.git
+  ```
 
-This project is a starting point for a Flutter application.
+  2. Get a Bearer token [here](https://www.themoviedb.org/).
 
-A few resources to get you started if this is your first Flutter project:
+  3. Go to the project root directory and execute the following commands:
+  ```
+  flutter pub get
+  flutter run --dart-define=ENV=prod --dart-define=TOKEN={YOUR_TOKEN}
+  ```
+  Note: replace **{YOUR_TOKEN}** from the 2nd command with the Bearer token from TMDB
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  ## Preview
+  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
