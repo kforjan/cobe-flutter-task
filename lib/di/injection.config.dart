@@ -15,18 +15,18 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:go_router/go_router.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../common/blocs/connectivity_bloc/connectivity_bloc.dart' as _i4;
-import '../config/flavor_config.dart' as _i5;
-import '../data/movies/repositories/movies_repository.dart' as _i13;
-import '../data/movies/services/movies_local_service.dart' as _i8;
-import '../data/movies/services/movies_remote_service.dart' as _i12;
-import '../data/movies/sources/movies_local_data_source.dart' as _i7;
-import '../data/movies/sources/movies_remote_data_source.dart' as _i11;
-import '../presentation/favorites/bloc/favorites_bloc.dart' as _i15;
-import '../presentation/popular/bloc/popular_bloc.dart' as _i14;
-import '../router/app_router.dart' as _i9;
-import 'modules/navigation_module.dart' as _i16;
-import 'modules/network_module.dart' as _i17;
+import 'package:cobe_flutter_task/common/blocs/connectivity_bloc/connectivity_bloc.dart' as _i4;
+import 'package:cobe_flutter_task/config/flavor_config.dart' as _i5;
+import 'package:cobe_flutter_task/data/movies/repositories/movies_repository.dart' as _i13;
+import 'package:cobe_flutter_task/data/movies/services/movies_local_service.dart' as _i8;
+import 'package:cobe_flutter_task/data/movies/services/movies_remote_service.dart' as _i12;
+import 'package:cobe_flutter_task/data/movies/sources/movies_local_data_source.dart' as _i7;
+import 'package:cobe_flutter_task/data/movies/sources/movies_remote_data_source.dart' as _i11;
+import 'package:cobe_flutter_task/presentation/favorites/bloc/favorites_bloc.dart' as _i15;
+import 'package:cobe_flutter_task/presentation/popular/bloc/popular_bloc.dart' as _i14;
+import 'package:cobe_flutter_task/router/app_router.dart' as _i9;
+import 'package:cobe_flutter_task/di/modules/navigation_module.dart' as _i16;
+import 'package:cobe_flutter_task/di/modules/network_module.dart' as _i17;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -46,7 +46,7 @@ extension GetItInjectableX on _i1.GetIt {
     final navigationModule = _$NavigationModule();
     gh.singleton<_i3.Connectivity>(networkModule.connectivity);
     gh.factory<_i4.ConnectivityBloc>(
-        () => _i4.ConnectivityBloc(gh<_i3.Connectivity>()));
+        () => _i4.ConnectivityBloc(gh<_i3.Connectivity>()),);
     gh.singleton<_i5.FlavorConfig>(
       _i5.DevConfig(),
       registerFor: {_dev},
@@ -58,21 +58,21 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i6.GoRouter>(navigationModule.goRouter);
     gh.singleton<_i7.MoviesLocalDataSource>(_i7.MoviesLocalDataSource());
     gh.lazySingleton<_i8.MoviesLocalService>(
-        () => _i8.MoviesLocalService(gh<_i7.MoviesLocalDataSource>()));
+        () => _i8.MoviesLocalService(gh<_i7.MoviesLocalDataSource>()),);
     gh.singleton<_i9.AppRouter>(_i9.AppRouter(gh<_i6.GoRouter>()));
     gh.singleton<_i10.Dio>(networkModule.getDio(gh<_i5.FlavorConfig>()));
     gh.lazySingleton<_i11.MoviesRemoteDataSource>(
-        () => networkModule.getMoviesRemoteDataSource(gh<_i10.Dio>()));
+        () => networkModule.getMoviesRemoteDataSource(gh<_i10.Dio>()),);
     gh.lazySingleton<_i12.MoviesRemoteService>(
-        () => _i12.MoviesRemoteService(gh<_i11.MoviesRemoteDataSource>()));
+        () => _i12.MoviesRemoteService(gh<_i11.MoviesRemoteDataSource>()),);
     gh.lazySingleton<_i13.MoviesRepository>(() => _i13.MoviesRepository(
           gh<_i12.MoviesRemoteService>(),
           gh<_i8.MoviesLocalService>(),
-        ));
+        ),);
     gh.factory<_i14.PopularBloc>(
-        () => _i14.PopularBloc(gh<_i13.MoviesRepository>()));
+        () => _i14.PopularBloc(gh<_i13.MoviesRepository>()),);
     gh.factory<_i15.FavoritesBloc>(
-        () => _i15.FavoritesBloc(gh<_i13.MoviesRepository>()));
+        () => _i15.FavoritesBloc(gh<_i13.MoviesRepository>()),);
     return this;
   }
 }

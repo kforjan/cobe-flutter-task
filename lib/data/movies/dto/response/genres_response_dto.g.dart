@@ -14,7 +14,7 @@ _$_GenresResponseDto _$$_GenresResponseDtoFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$_GenresResponseDtoToJson(
-        _$_GenresResponseDto instance) =>
+        _$_GenresResponseDto instance,) =>
     <String, dynamic>{
       'genres': instance.genres,
     };

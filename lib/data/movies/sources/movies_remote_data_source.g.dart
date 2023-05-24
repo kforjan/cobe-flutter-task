@@ -10,9 +10,7 @@ part of 'movies_remote_data_source.dart';
 
 class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
   _MoviesRemoteDataSource(
-    this._dio, {
-    this.baseUrl,
-  });
+    this._dio,);
 
   final Dio _dio;
 
@@ -23,7 +21,7 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GenresResponseDto>(Options(
       method: 'GET',
@@ -36,19 +34,19 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
               queryParameters: queryParameters,
               data: _data,
             )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),),);
     final value = GenresResponseDto.fromJson(_result.data!);
     return value;
   }
 
   @override
   Future<PopularMoviesResponseDto> getPopularMovies(
-      {required CommonQueryParamsDto queries}) async {
+      {required CommonQueryParamsDto queries,}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(queries.toJson());
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PopularMoviesResponseDto>(Options(
       method: 'GET',
@@ -61,7 +59,7 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
               queryParameters: queryParameters,
               data: _data,
             )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),),);
     final value = PopularMoviesResponseDto.fromJson(_result.data!);
     return value;
   }
@@ -75,7 +73,7 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(queries.toJson());
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<MovieDetailsResponseDto>(Options(
       method: 'GET',
@@ -88,7 +86,7 @@ class _MoviesRemoteDataSource implements MoviesRemoteDataSource {
               queryParameters: queryParameters,
               data: _data,
             )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),),);
     final value = MovieDetailsResponseDto.fromJson(_result.data!);
     return value;
   }

@@ -7,7 +7,7 @@ part of 'movie_details_response_dto.dart';
 // **************************************************************************
 
 _$_MovieDetailsResponseDto _$$_MovieDetailsResponseDtoFromJson(
-        Map<String, dynamic> json) =>
+        Map<String, dynamic> json,) =>
     _$_MovieDetailsResponseDto(
       id: json['id'] as int,
       genres: (json['genres'] as List<dynamic>)
@@ -21,7 +21,7 @@ _$_MovieDetailsResponseDto _$$_MovieDetailsResponseDtoFromJson(
     );
 
 Map<String, dynamic> _$$_MovieDetailsResponseDtoToJson(
-        _$_MovieDetailsResponseDto instance) =>
+        _$_MovieDetailsResponseDto instance,) =>
     <String, dynamic>{
       'id': instance.id,
       'genres': instance.genres,
