@@ -16,6 +16,3 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const App());
 }
-//TODO remove blue scroll drag marker
-// TODO theme
-// TODO check all text colors
