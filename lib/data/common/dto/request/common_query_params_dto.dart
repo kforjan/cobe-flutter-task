@@ -7,9 +7,9 @@ part 'common_query_params_dto.g.dart';
 class CommonQueryParamsDto with _$CommonQueryParamsDto {
   const factory CommonQueryParamsDto({
     required String language,
-    required int page,
+    int? page,
   }) = _CommonQueryParamsDto;
 
   factory CommonQueryParamsDto.fromJson(Map<String, dynamic> json) =>
       _$CommonQueryParamsDtoFromJson(json);
-}
+}//todo rename directory to queries

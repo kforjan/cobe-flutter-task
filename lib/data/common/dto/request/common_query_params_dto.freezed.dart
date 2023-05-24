@@ -21,7 +21,7 @@ CommonQueryParamsDto _$CommonQueryParamsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CommonQueryParamsDto {
   String get language => throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $CommonQueryParamsDtoCopyWith<$Res> {
           $Res Function(CommonQueryParamsDto) then) =
       _$CommonQueryParamsDtoCopyWithImpl<$Res, CommonQueryParamsDto>;
   @useResult
-  $Res call({String language, int page});
+  $Res call({String language, int? page});
 }
 
 /// @nodoc
@@ -53,17 +53,17 @@ class _$CommonQueryParamsDtoCopyWithImpl<$Res,
   @override
   $Res call({
     Object? language = null,
-    Object? page = null,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      page: null == page
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -76,7 +76,7 @@ abstract class _$$_CommonQueryParamsDtoCopyWith<$Res>
       __$$_CommonQueryParamsDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String language, int page});
+  $Res call({String language, int? page});
 }
 
 /// @nodoc
@@ -91,17 +91,17 @@ class __$$_CommonQueryParamsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? language = null,
-    Object? page = null,
+    Object? page = freezed,
   }) {
     return _then(_$_CommonQueryParamsDto(
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      page: null == page
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -109,7 +109,7 @@ class __$$_CommonQueryParamsDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CommonQueryParamsDto implements _CommonQueryParamsDto {
-  const _$_CommonQueryParamsDto({required this.language, required this.page});
+  const _$_CommonQueryParamsDto({required this.language, this.page});
 
   factory _$_CommonQueryParamsDto.fromJson(Map<String, dynamic> json) =>
       _$$_CommonQueryParamsDtoFromJson(json);
@@ -117,7 +117,7 @@ class _$_CommonQueryParamsDto implements _CommonQueryParamsDto {
   @override
   final String language;
   @override
-  final int page;
+  final int? page;
 
   @override
   String toString() {
@@ -156,7 +156,7 @@ class _$_CommonQueryParamsDto implements _CommonQueryParamsDto {
 abstract class _CommonQueryParamsDto implements CommonQueryParamsDto {
   const factory _CommonQueryParamsDto(
       {required final String language,
-      required final int page}) = _$_CommonQueryParamsDto;
+      final int? page}) = _$_CommonQueryParamsDto;
 
   factory _CommonQueryParamsDto.fromJson(Map<String, dynamic> json) =
       _$_CommonQueryParamsDto.fromJson;
@@ -164,7 +164,7 @@ abstract class _CommonQueryParamsDto implements CommonQueryParamsDto {
   @override
   String get language;
   @override
-  int get page;
+  int? get page;
   @override
   @JsonKey(ignore: true)
   _$$_CommonQueryParamsDtoCopyWith<_$_CommonQueryParamsDto> get copyWith =>

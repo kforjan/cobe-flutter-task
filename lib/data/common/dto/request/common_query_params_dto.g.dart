@@ -10,7 +10,7 @@ _$_CommonQueryParamsDto _$$_CommonQueryParamsDtoFromJson(
         Map<String, dynamic> json) =>
     _$_CommonQueryParamsDto(
       language: json['language'] as String,
-      page: json['page'] as int,
+      page: json['page'] as int?,
     );
 
 Map<String, dynamic> _$$_CommonQueryParamsDtoToJson(

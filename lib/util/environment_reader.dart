@@ -12,10 +12,10 @@ abstract class EnvironmentReader {
     return env;
   }
 
-  static String get apiKey {
-    const key = String.fromEnvironment('API_KEY');
+  static String get token {
+    const key = String.fromEnvironment('TOKEN');
     if (key.isEmpty) {
-      throw Exception('API key is not defined');
+      throw Exception('Token is not defined');
     }
     return key;
   }
