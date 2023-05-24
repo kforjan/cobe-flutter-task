@@ -5,9 +5,9 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+part 'connectivity_bloc.freezed.dart';
 part 'connectivity_event.dart';
 part 'connectivity_state.dart';
-part 'connectivity_bloc.freezed.dart';
 
 @injectable
 class ConnectivityBloc extends Bloc<ConnectivityEvent, ConnectivityState> {

@@ -2,6 +2,7 @@ import 'package:cobe_flutter_task/common/blocs/connectivity_bloc/connectivity_bl
 import 'package:cobe_flutter_task/common/widgets/connectivity_alert_dialog.dart';
 import 'package:cobe_flutter_task/presentation/favorites/pages/favorites_page.dart';
 import 'package:cobe_flutter_task/presentation/home/widgets/home_navigation_bar.dart';
+import 'package:cobe_flutter_task/presentation/popular/bloc/popular_bloc.dart';
 import 'package:cobe_flutter_task/presentation/popular/pages/popular_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,10 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) => const ConnectivityAlertDialog(),
                 );
               },
-              online: (state) {},
+              online: (state) {
+                BlocProvider.of<PopularBloc>(context)
+                    .add(const PopularEvent.getPopularMovies());
+              },
             );
           },
           child: IndexedStack(
