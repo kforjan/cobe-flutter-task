@@ -18,6 +18,6 @@ Hive is a Flutter application for discovering popular movies and creating a pers
   Note: Replace **{YOUR_TOKEN}** in the second command with the Bearer token obtained from TMDB. For the *ENV* variable, you may choose either **prod** or **dev**. Both will yield the same results, but are provided here for demonstration purposes.
 
   ## Preview
-<img src="https://s11.gifyu.com/images/Screenrecorder-2023-05-24-19-16-00-563_AdobeExpress-1.gif" alt="Preview GIF"  height="500">
+<img src="https://s11.gifyu.com/images/Screenrecorder-2023-05-24-19-16-00-563_AdobeExpress-1.gif" alt="Preview GIF"  height="500px">
 
 
